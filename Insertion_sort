@@ -1,0 +1,29 @@
+Question: The c program of insertion sort.
+
+#include<stdio.h>
+void print_arr(int* arr,int n){
+   for(int i=0;i<n;i++){
+        printf("%d  ",arr[i]);
+    }
+    printf("\n");
+}
+void Insertion_sort(int *arr,int n){
+    int key,j;
+    for(int i=0;i<n;i++){
+        key=arr[i];
+        j=i-1;
+        while(j>=0&&arr[j]>key){
+            arr[j+1]=arr[j];
+             j--;
+        }
+        arr[j+1]=key;
+    }
+}
+int main(){
+    int arr[]={1,9,2,4,3,8,0};
+    int n=7;
+    print_arr(arr,n);
+    Insertion_sort(arr,n);
+     print_arr(arr,n);
+    return 0;
+}
